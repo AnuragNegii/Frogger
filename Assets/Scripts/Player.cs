@@ -11,7 +11,6 @@ public class Player : MonoBehaviour
     if(Input.GetKeyDown(KeyCode.W)){
         transform.position += new Vector3(0f, 1.0f, 0f);
         animator.SetTrigger("forward");
-
     }
     if(Input.GetKeyDown(KeyCode.S)){
         transform.position -= new Vector3(0f, 1.0f, 0f);
