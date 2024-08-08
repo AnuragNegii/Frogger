@@ -10,7 +10,6 @@ public class PlayGameClicked : MonoBehaviour {
         button = GetComponent<Button>();
         button.onClick.AddListener(OnButtonClick);
     }
-
     private void OnButtonClick(){
         SceneManager.LoadScene("GameScene");
     }
