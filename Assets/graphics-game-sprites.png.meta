@@ -408,6 +408,90 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: graphics-game-sprites_13
+      rect:
+        serializedVersion: 2
+        x: 388
+        y: 247
+        width: 183
+        height: 54
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 258ab2fa409a9364fa70b1e407e217d5
+      internalID: 647297621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graphics-game-sprites_14
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 176
+        width: 269
+        height: 53
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df278017f7917b94e951449fe5f7cf3a
+      internalID: -420747538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graphics-game-sprites_15
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 414
+        width: 215
+        height: 60
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd433530f3dfe7646af7c3d31d35d464
+      internalID: 768484931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graphics-game-sprites_16
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 493
+        width: 147
+        height: 58
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ecc2488820570244815e64bb7c8a757
+      internalID: -693486782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -424,6 +508,10 @@ TextureImporter:
       graphics-game-sprites_10: -1237611079
       graphics-game-sprites_11: -61945791
       graphics-game-sprites_12: -1843455885
+      graphics-game-sprites_13: 647297621
+      graphics-game-sprites_14: -420747538
+      graphics-game-sprites_15: 768484931
+      graphics-game-sprites_16: -693486782
       graphics-game-sprites_2: -690067443
       graphics-game-sprites_3: 1863637409
       graphics-game-sprites_4: -978245215

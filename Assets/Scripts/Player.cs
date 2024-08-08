@@ -5,6 +5,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     [SerializeField] private LayerMask waterLayerMask;
     [SerializeField] private bool inWater;
+    [SerializeField] private LayerMask LogLayerMask;
     private void Awake(){
         animator = GetComponent<Animator>();
     }
@@ -20,10 +21,16 @@ public class Player : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position + transformOffset, transform.up, rayDistance, waterLayerMask);
         if(hit){
             inWater = true;
+          
         }else{
             inWater = false;
         }
-    Debug.DrawRay(transform.position + transformOffset, transform.up * rayDistance, Color.red, float.MaxValue);
+        RaycastHit2D platform = Physics2D.Raycast(transform.position + transformOffset, transform.up, rayDistance, LogLayerMask);
+
+        if(platform){
+           transform.position = hit.collider.gameObject.GetComponent<Transform>().position;
+        }
+   // Debug.DrawRay(transform.position + transformOffset, transform.up * rayDistance, Color.red, float.MaxValue);
 
     }
     private void PlayerMovement()
