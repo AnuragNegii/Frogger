@@ -26,7 +26,7 @@ public class Player : MonoBehaviour
         }else{
             inWater = false;
         }
-    Debug.DrawRay(transform.position + transformOffset, transform.up * rayDistance, Color.red, float.MaxValue);
+    //Debug.DrawRay(transform.position + transformOffset, transform.up * rayDistance, Color.red, float.MaxValue);
 
     }
     private void PlayerMovement()
