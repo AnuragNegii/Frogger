@@ -303,6 +303,27 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
+    - serializedVersion: 2
+      name: graphics-game-sprites_8
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 9
+        width: 127
+        height: 67
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 86c7aea23d86943fca0b1fb065245ac6
+      internalID: 1432995713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -322,6 +343,7 @@ TextureImporter:
       graphics-game-sprites_5: -1183204458
       graphics-game-sprites_6: -1185823376
       graphics-game-sprites_7: 396161952
+      graphics-game-sprites_8: 1432995713
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
