@@ -312,7 +312,7 @@ TextureImporter:
         width: 127
         height: 67
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -320,6 +320,90 @@ TextureImporter:
       bones: []
       spriteID: 86c7aea23d86943fca0b1fb065245ac6
       internalID: 1432995713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graphics-game-sprites_9
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 9
+        width: 132
+        height: 69
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5328f2e4caca1c48225231c5f7a78c
+      internalID: -1764379939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graphics-game-sprites_10
+      rect:
+        serializedVersion: 2
+        x: 204
+        y: 90
+        width: 282
+        height: 65
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 964cb66f638c10250b3f8086271e3937
+      internalID: -1237611079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graphics-game-sprites_11
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 9
+        width: 133
+        height: 66
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb237bd5c80f678baef5d8a2f201a44
+      internalID: -61945791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: graphics-game-sprites_12
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 90
+        width: 176
+        height: 62
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0852fc60cbc2919f297bc3ef57c86c2b
+      internalID: -1843455885
       vertices: []
       indices: 
       edges: []
@@ -337,6 +421,9 @@ TextureImporter:
     nameFileIdTable:
       graphics-game-sprites_0: 1658566935
       graphics-game-sprites_1: -1766177131
+      graphics-game-sprites_10: -1237611079
+      graphics-game-sprites_11: -61945791
+      graphics-game-sprites_12: -1843455885
       graphics-game-sprites_2: -690067443
       graphics-game-sprites_3: 1863637409
       graphics-game-sprites_4: -978245215
@@ -344,6 +431,7 @@ TextureImporter:
       graphics-game-sprites_6: -1185823376
       graphics-game-sprites_7: 396161952
       graphics-game-sprites_8: 1432995713
+      graphics-game-sprites_9: -1764379939
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
