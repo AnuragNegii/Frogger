@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour{
     public static GameManager Instance{get; private set;}
-    [SerializeField]private Canvas canvas;
-    private bool isPaused;
+    [SerializeField] private Canvas canvas;
+    public bool isPaused;
     private void Awake(){
         if(Instance != null){
             Debug.LogError("There is more than one Game Manager");
