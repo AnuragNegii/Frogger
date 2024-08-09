@@ -17,8 +17,10 @@ public class GameManager : MonoBehaviour{
     }
     
     private void Start(){
+        
         Time.timeScale = 1;
     }
+
     private void Update(){
         if(Input.GetKeyDown(KeyCode.Escape)){
             if(isPaused){

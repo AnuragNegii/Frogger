@@ -1,15 +1,32 @@
+using System;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Player : MonoBehaviour
 {   
+    public static Player Instance{get; private set;}
     private Animator animator;
     [SerializeField] private LayerMask waterLayerMask;
     [SerializeField] private bool inWater;
+    [SerializeField] private bool isDead;
+    public event EventHandler IsDeadEvent;
+
+    private BoxCollider2D boxCollider2D;
     private void Awake(){
+        if(Instance != null){
+            Debug.LogError("More than One Player in the game");
+        }
+        Instance= this;
         animator = GetComponent<Animator>();
+        boxCollider2D = GetComponent<BoxCollider2D>();
+        animator = GetComponentInChildren<Animator>();
     }
     private void Update()
     {
+        if(isDead){
+            boxCollider2D.enabled = false;
+            return;
+        }
         if(GameManager.Instance.isPaused){
             return;
         }
@@ -50,6 +67,14 @@ public class Player : MonoBehaviour
         {
             transform.position += new Vector3(1.0f, 0f, 0f);
             animator.SetTrigger("Right");
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other) {
+        if(other.gameObject.tag == "Enemy"){
+            animator.SetTrigger("isDead");
+            isDead = true;
+            IsDeadEvent?.Invoke(this, EventArgs.Empty);
         }
     }
 }

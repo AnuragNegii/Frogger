@@ -15,9 +15,13 @@ public class Menu : MonoBehaviour {
     [SerializeField] private Button playAgainButton;
     [SerializeField] private Button quitButton;
 
+    [SerializeField] private bool isDead;
+    private float timer = 0;
+
     private void Start(){
         GameManager.Instance.PauseGamePressed += GameManager_PauseGamePressed;
         GameManager.Instance.ResumeGamePressed += GameManager_ResumeGamePressed;
+        Player.Instance.IsDeadEvent += Player_IsDeadEvent;
         
         pauseMenuGameObject.SetActive(false);
         gameOverMenuGameObject.SetActive(false);
@@ -27,6 +31,20 @@ public class Menu : MonoBehaviour {
 
         playAgainButton.onClick.AddListener(OnPlayAgainButtonClicked);
         quitButton.onClick.AddListener(QuitButtonPressed);
+    }
+
+    private void Update(){
+        if(isDead){
+            timer += Time.deltaTime;
+            if(timer > 1){
+                gameOverMenuGameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void Player_IsDeadEvent(object sender, EventArgs e)
+    {
+        isDead = true;
     }
 
     private void QuitButtonPressed()
