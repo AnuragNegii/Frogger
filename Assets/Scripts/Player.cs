@@ -25,12 +25,13 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
-        if(!isOnLog && inWater){
+        if(!isOnLog && inWater){            
             isDead = true;
+            Debug.Log("Is Dead");
         }
         if(isDead){
-            animator.SetTrigger("isDead");
             IsDeadEvent?.Invoke(this, EventArgs.Empty);
+            animator.SetBool("isDead",isDead);
             boxCollider2D.enabled = false;
             return;
         }
