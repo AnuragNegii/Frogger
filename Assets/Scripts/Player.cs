@@ -7,8 +7,10 @@ public class Player : MonoBehaviour
     public static Player Instance{get; private set;}
     private Animator animator;
     [SerializeField] private LayerMask waterLayerMask;
+    [SerializeField] private LayerMask logLayerMask;
     [SerializeField] private bool inWater;
     [SerializeField] private bool isDead;
+    [SerializeField] private bool isOnLog;
     public event EventHandler IsDeadEvent;
 
     private BoxCollider2D boxCollider2D;
@@ -23,7 +25,12 @@ public class Player : MonoBehaviour
     }
     private void Update()
     {
+        if(!isOnLog && inWater){
+            isDead = true;
+        }
         if(isDead){
+            animator.SetTrigger("isDead");
+            IsDeadEvent?.Invoke(this, EventArgs.Empty);
             boxCollider2D.enabled = false;
             return;
         }
@@ -43,6 +50,15 @@ public class Player : MonoBehaviour
         }else{
             inWater = false;
         }
+        RaycastHit2D logHit = Physics2D.Raycast(transform.position + transformOffset, transform.up, rayDistance, logLayerMask);
+        if(logHit){
+            transform.parent = logHit.collider.transform;
+            isOnLog = true;
+        }else{
+            transform.parent = null;
+            isOnLog = false;
+        }
+
     //Debug.DrawRay(transform.position + transformOffset, transform.up * rayDistance, Color.red, float.MaxValue);
 
     }
@@ -72,9 +88,7 @@ public class Player : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Enemy"){
-            animator.SetTrigger("isDead");
             isDead = true;
-            IsDeadEvent?.Invoke(this, EventArgs.Empty);
         }
     }
 }
