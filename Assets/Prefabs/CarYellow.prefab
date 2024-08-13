@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5784495796393709973}
   - component: {fileID: 6102641204163785223}
   - component: {fileID: 7510235525287823040}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: CarYellow
   m_TagString: Enemy
   m_Icon: {fileID: 0}

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5440561585049527481}
   - component: {fileID: 4792705909293012432}
   - component: {fileID: 829000531962950528}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: BigTruck
   m_TagString: Enemy
   m_Icon: {fileID: 0}

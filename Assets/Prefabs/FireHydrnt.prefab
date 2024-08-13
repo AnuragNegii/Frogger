@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6588822303348493429}
   - component: {fileID: 62085091921887014}
   - component: {fileID: 3703365299741551779}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: FireHydrnt
   m_TagString: Enemy
   m_Icon: {fileID: 0}
