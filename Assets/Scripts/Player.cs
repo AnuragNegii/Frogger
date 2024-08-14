@@ -12,6 +12,8 @@ public class Player : MonoBehaviour
     [SerializeField] private bool inWater;
     [SerializeField] private bool isDead;
     [SerializeField] private bool isOnLog;
+
+    public bool dieOnRoad;
     public event EventHandler IsDeadEvent;
 
     private Vector3 startingPosition;
@@ -101,6 +103,7 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Enemy"){
             isDead = true;
+            dieOnRoad=true;
         }
     }
 }
