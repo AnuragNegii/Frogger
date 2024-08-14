@@ -14,6 +14,7 @@ public class Player : MonoBehaviour
     [SerializeField] private bool isOnLog;
     public event EventHandler IsDeadEvent;
 
+    private Vector3 startingPosition;
     private BoxCollider2D boxCollider2D;
     private void Awake(){
         if(Instance != null){
@@ -23,6 +24,8 @@ public class Player : MonoBehaviour
         animator = GetComponent<Animator>();
         boxCollider2D = GetComponent<BoxCollider2D>();
         animator = GetComponentInChildren<Animator>();
+
+        startingPosition = transform.position;
     }
     private void Update()
     {
@@ -62,6 +65,9 @@ public class Player : MonoBehaviour
         }
         RaycastHit2D finishLineHit = Physics2D.Raycast(transform.position + transformOffset, transform.up, rayDistance, finishLineLayerMask);
         if(finishLineHit){
+            SpriteRenderer spriteRenderer = finishLineHit.collider.GetComponent<SpriteRenderer>();
+            spriteRenderer.color += new Color(0, 0, 0, 255);
+            transform.position = startingPosition;
             Debug.Log("Finish");
         }
 
