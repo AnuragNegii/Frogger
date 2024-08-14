@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
     private Animator animator;
     [SerializeField] private LayerMask waterLayerMask;
     [SerializeField] private LayerMask logLayerMask;
+    [SerializeField] private LayerMask finishLineLayerMask;
     [SerializeField] private bool inWater;
     [SerializeField] private bool isDead;
     [SerializeField] private bool isOnLog;
@@ -59,9 +60,12 @@ public class Player : MonoBehaviour
             transform.parent = null;
             isOnLog = false;
         }
+        RaycastHit2D finishLineHit = Physics2D.Raycast(transform.position + transformOffset, transform.up, rayDistance, finishLineLayerMask);
+        if(finishLineHit){
+            Debug.Log("Finish");
+        }
 
     //Debug.DrawRay(transform.position + transformOffset, transform.up * rayDistance, Color.red, float.MaxValue);
-
     }
     private void PlayerMovement()
     {
