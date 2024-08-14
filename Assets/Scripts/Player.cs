@@ -71,6 +71,7 @@ public class Player : MonoBehaviour
             SpriteRenderer spriteRenderer = finishLineHit.collider.GetComponent<SpriteRenderer>();
             spriteRenderer.color += new Color(0, 0, 0, 255);
             transform.position = startingPosition;
+            //This is for testing
             Debug.Log("Finish");
         }
 
