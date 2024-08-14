@@ -3,9 +3,12 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour {
     
     public static SoundManager Instance{get; private set;}
-    [SerializeField] private AudioClip mainAudioClip;
+    [SerializeField] private AudioSource mainAudioSource;
+    [SerializeField] private AudioSource secondAudioSource;
 
-    private AudioSource audioSource;
+    [SerializeField] private AudioClip mainAudioClip;
+    [SerializeField] private AudioClip dieOnRoadAudioClip;
+
 
     private void Awake() {
         if(Instance != null){
@@ -14,11 +17,21 @@ public class SoundManager : MonoBehaviour {
         }
         Instance = this;
         DontDestroyOnLoad(gameObject);
-        audioSource = GetComponent<AudioSource>();    
+
+        mainAudioSource.volume=0.4f;
+        secondAudioSource.volume=0.1f;
+           
     }
 
     private void Start(){
-        audioSource.clip = mainAudioClip;
-        audioSource.Play();
+        mainAudioSource.clip = mainAudioClip;
+        mainAudioSource.Play();
+        
+    }
+    private void Update(){
+        if(Player.Instance!=null && Player.Instance.dieOnRoad){
+          
+            secondAudioSource.PlayOneShot(dieOnRoadAudioClip);
+        }
     }
 }
