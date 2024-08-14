@@ -65,6 +65,7 @@ public class Player : MonoBehaviour
         }
         RaycastHit2D finishLineHit = Physics2D.Raycast(transform.position + transformOffset, transform.up, rayDistance, finishLineLayerMask);
         if(finishLineHit){
+            finishLineHit.collider.GetComponent<BoxCollider2D>().enabled = false;
             SpriteRenderer spriteRenderer = finishLineHit.collider.GetComponent<SpriteRenderer>();
             spriteRenderer.color += new Color(0, 0, 0, 255);
             transform.position = startingPosition;
