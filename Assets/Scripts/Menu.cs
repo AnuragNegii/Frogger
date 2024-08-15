@@ -15,16 +15,26 @@ public class Menu : MonoBehaviour {
     [SerializeField] private Button playAgainButton;
     [SerializeField] private Button quitButton;
 
-    [SerializeField] private bool isDead;
+    [Header("YOU WON MENU")]
+    [SerializeField] private GameObject youWonMenuGameObject;
+    [SerializeField] private Button playAgain;
+    [SerializeField] private Button mainMenu;
+
+    private bool isDead;
     private float timer = 0;
 
     private void Start(){
         GameManager.Instance.PauseGamePressed += GameManager_PauseGamePressed;
         GameManager.Instance.ResumeGamePressed += GameManager_ResumeGamePressed;
         Player.Instance.IsDeadEvent += Player_IsDeadEvent;
+        Player.Instance.YouWonEvent += Player_YouWonEvent;
         
         pauseMenuGameObject.SetActive(false);
         gameOverMenuGameObject.SetActive(false);
+        youWonMenuGameObject.SetActive(false);
+
+        playAgain.onClick.AddListener(OnPlayAgainButtonClicked);
+        mainMenu.onClick.AddListener(OnMainMenuButtonClicked);
 
         resumeButton.onClick.AddListener(OnResumeButtonClicked);
         mainMenuButton.onClick.AddListener(OnMainMenuButtonClicked);
@@ -76,4 +86,10 @@ public class Menu : MonoBehaviour {
     {
         GameManager.Instance.ResumeGame();
     }
+
+    private void Player_YouWonEvent(object sender, EventArgs e)
+    {
+        youWonMenuGameObject.SetActive(true);
+    }
+
 }
