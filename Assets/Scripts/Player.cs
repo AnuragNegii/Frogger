@@ -5,19 +5,22 @@ using UnityEngine.EventSystems;
 public class Player : MonoBehaviour
 {   
     public static Player Instance{get; private set;}
-    private Animator animator;
+
+    public event EventHandler LandedSafeEvent;
+    public event EventHandler IsDeadEvent;
+    public event EventHandler YouWonEvent;
+
+    [Header("Physics Check")]
     [SerializeField] private LayerMask waterLayerMask;
     [SerializeField] private LayerMask logLayerMask;
     [SerializeField] private LayerMask finishLineLayerMask;
-    [SerializeField] private bool inWater;
-    [SerializeField] private bool isDead;
-    [SerializeField] private bool isOnLog;
-
-    public bool dieOnRoad;
-    public event EventHandler IsDeadEvent;
-
+    private bool inWater;
+    private bool isDead;
+    private bool isOnLog;
+    private Animator animator;
     private Vector3 startingPosition;
     private BoxCollider2D boxCollider2D;
+    private int winCondition = 0;
     private void Awake(){
         if(Instance != null){
             Debug.LogError("More than One Player in the game");
@@ -33,7 +36,6 @@ public class Player : MonoBehaviour
     {
         if(!isOnLog && inWater){            
             isDead = true;
-            Debug.Log("Is Dead");
         }
         if(isDead){
             IsDeadEvent?.Invoke(this, EventArgs.Empty);
@@ -71,7 +73,12 @@ public class Player : MonoBehaviour
             SpriteRenderer spriteRenderer = finishLineHit.collider.GetComponent<SpriteRenderer>();
             spriteRenderer.color += new Color(0, 0, 0, 255);
             transform.position = startingPosition;
-            Debug.Log("Finish");
+            LandedSafeEvent?.Invoke(this, EventArgs.Empty);
+            winCondition += 1;
+            if(winCondition >= 5){
+                YouWonEvent?.Invoke(this, EventArgs.Empty);
+                Debug.Log("You Won");
+            }
         }
 
     //Debug.DrawRay(transform.position + transformOffset, transform.up * rayDistance, Color.red, float.MaxValue);
@@ -103,7 +110,13 @@ public class Player : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D other) {
         if(other.gameObject.tag == "Enemy"){
             isDead = true;
-            dieOnRoad=true;
         }
+    }
+    public bool GetIsOnWater(){
+        return inWater;
+    }
+
+    public bool GetIsDead(){
+        return isDead;
     }
 }

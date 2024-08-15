@@ -372,6 +372,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 541773554878959972, guid: 502df56502a51db9fa9fddc1b3eefa89, type: 3}
+      propertyPath: landedSafe
+      value: 
+      objectReference: {fileID: 8300000, guid: 9a1c30867bb1a53b3a4d04bdb8d9fc4d, type: 3}
+    - target: {fileID: 541773554878959972, guid: 502df56502a51db9fa9fddc1b3eefa89, type: 3}
       propertyPath: mainAudioSource
       value: 
       objectReference: {fileID: 4242983}
@@ -383,6 +387,10 @@ PrefabInstance:
       propertyPath: dieOnRoadAudioClip
       value: 
       objectReference: {fileID: 8300000, guid: a17d7f4faaaf6dc60a242418615e53a0, type: 3}
+    - target: {fileID: 541773554878959972, guid: 502df56502a51db9fa9fddc1b3eefa89, type: 3}
+      propertyPath: dieOnWaterAudioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: d4ca0304b4d08eb949b0c280292449da, type: 3}
     - target: {fileID: 2816923763377966069, guid: 502df56502a51db9fa9fddc1b3eefa89, type: 3}
       propertyPath: m_Name
       value: SoundManager

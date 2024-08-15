@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class SoundManager : MonoBehaviour {
@@ -7,8 +8,6 @@ public class SoundManager : MonoBehaviour {
     [SerializeField] private AudioSource secondAudioSource;
 
     [SerializeField] private AudioClip mainAudioClip;
-    [SerializeField] private AudioClip dieOnRoadAudioClip;
-
 
     private void Awake() {
         if(Instance != null){
@@ -26,12 +25,10 @@ public class SoundManager : MonoBehaviour {
     private void Start(){
         mainAudioSource.clip = mainAudioClip;
         mainAudioSource.Play();
-        
+        mainAudioSource.loop = true;
     }
-    private void Update(){
-        if(Player.Instance!=null && Player.Instance.dieOnRoad){
-          
-            secondAudioSource.PlayOneShot(dieOnRoadAudioClip);
-        }
+
+    public AudioSource GetAudioSourceForSfx(){
+        return secondAudioSource;
     }
 }
